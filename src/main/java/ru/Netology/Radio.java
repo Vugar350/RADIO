@@ -26,14 +26,56 @@ public class Radio {
 
     }
 
-        public void switchPrevCurrentStation() {
+    public void switchPrevCurrentStation() {
         if (currentStation == 0) {
-            this.currentStation = currentStation=9;
-        } else if (currentStation <=9) {
-            this.currentStation=currentStation-1;
+            this.currentStation = 9;
+        } else if (currentStation <= 9) {
+            this.currentStation = currentStation - 1;
         }
     }
+
+    private int currentVolume;
+
+    public int getCurrentVolume() {
+        return currentVolume;
     }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            currentVolume=0;
+        }
+        if (currentVolume > 10) {
+            currentVolume=10;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public void increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+
+
+
+        }
+    }
+    public void decreaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume - 1;
+
+        }
+
+    }
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 
