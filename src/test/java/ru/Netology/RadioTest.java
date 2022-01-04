@@ -29,9 +29,9 @@ class RadioTest {
     @Test
     public void switchPrevCurrentStation() {
         Radio rad = new Radio();
-        rad.setCurrentStation(8);
+        rad.setCurrentStation(0);
         rad.switchPrevCurrentStation();
-        int expected = 7;
+        int expected = 9;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
 
