@@ -36,6 +36,16 @@ class RadioTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    public void switch1PrevCurrentStation() {
+        Radio rad = new Radio();
+        rad.setCurrentStation(8);
+        rad.switchPrevCurrentStation();
+        int expected = 7;
+        int actual = rad.getCurrentStation();
+        assertEquals(expected, actual);
+
+    }
 
 
 
