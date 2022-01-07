@@ -19,9 +19,19 @@ class RadioTest {
     @Test
     public void switch1CurrentStation() {
         Radio rad = new Radio();
-        rad.setCurrentStation(6);
+        rad.setCurrentStation(8);
         rad.switchCurrentStation();
-        int expected = 7;
+        int expected = 9;
+        int actual = rad.getCurrentStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void switch2CurrentStation() {
+        Radio rad = new Radio();
+        rad.setCurrentStation(10);
+        rad.switchCurrentStation();
+        int expected = 1;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
     }
