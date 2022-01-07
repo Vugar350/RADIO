@@ -51,9 +51,9 @@ class RadioTest {
     @Test
     public void switch1PrevCurrentStation() {
         Radio rad = new Radio();
-        rad.setCurrentStation(8);
+        rad.setCurrentStation(9);
         rad.switchPrevCurrentStation();
-        int expected = 7;
+        int expected = 8;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
 

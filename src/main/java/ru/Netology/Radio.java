@@ -34,10 +34,9 @@ public class Radio {
     }
 
     public int switchPrevCurrentStation() {
-        if (currentStation == 0) {
+        if (currentStation <= 0) {
             this.currentStation = 9;
-        }
-        if (currentStation < 9) {
+        } else {
             this.currentStation = currentStation - 1;
         }
         return currentStation;
