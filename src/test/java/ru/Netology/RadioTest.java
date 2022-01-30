@@ -26,16 +26,6 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void switch2CurrentStation() {
-        Radio rad = new Radio();
-        rad.setCurrentStation(9);
-        rad.switchCurrentStation();
-        int expected = 0;
-        int actual = rad.getCurrentStation();
-        assertEquals(expected, actual);
-    }
-
 
     @Test
     public void switchPrevCurrentStation() {
@@ -74,7 +64,7 @@ class RadioTest {
     public void set2CurrentStation() {
         Radio rad = new Radio();
         rad.setCurrentStation(-1);
-        int expected = 0;
+        int expected = 9;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
 
@@ -99,6 +89,7 @@ class RadioTest {
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
     }
+
     @Test
     public void increase1VolumeOverMax() {
         Radio rad = new Radio();
@@ -140,6 +131,7 @@ class RadioTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void setCurrentVolumeOverMax() {
         Radio rad = new Radio();
