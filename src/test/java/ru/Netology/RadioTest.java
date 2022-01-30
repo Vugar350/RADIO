@@ -26,16 +26,6 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void switch2CurrentStation() {
-        Radio rad = new Radio();
-        rad.setCurrentStation(10);
-        rad.switchCurrentStation();
-        int expected = 1;
-        int actual = rad.getCurrentStation();
-        assertEquals(expected, actual);
-    }
-
 
     @Test
     public void switchPrevCurrentStation() {
@@ -74,7 +64,7 @@ class RadioTest {
     public void set2CurrentStation() {
         Radio rad = new Radio();
         rad.setCurrentStation(-1);
-        int expected = 0;
+        int expected = 9;
         int actual = rad.getCurrentStation();
         assertEquals(expected, actual);
 
@@ -95,7 +85,17 @@ class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentVolume(11);
         rad.increaseVolume();
-        int expected = 10;
+        int expected = 12;
+        int actual = rad.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void increase1VolumeOverMax() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(100);
+        rad.increaseVolume();
+        int expected = 100;
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
     }
@@ -114,9 +114,9 @@ class RadioTest {
     @Test
     public void decrease1Volume() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(0);
         rad.decreaseVolume();
-        int expected = 10;
+        int expected = 0;
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
 
@@ -133,10 +133,19 @@ class RadioTest {
     }
 
     @Test
+    public void setCurrentVolumeOverMax() {
+        Radio rad = new Radio();
+        rad.setCurrentVolume(101);
+        int expected = 100;
+        int actual = rad.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void set1CurrentVolume() {
         Radio rad = new Radio();
         rad.setCurrentVolume(11);
-        int expected = 10;
+        int expected = 11;
         int actual = rad.getCurrentVolume();
         assertEquals(expected, actual);
 
